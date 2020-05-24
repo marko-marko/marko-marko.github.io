@@ -1,0 +1,81 @@
+<html>
+	<head>
+	<title>Анкета</title>
+	<style>
+		body{
+		margin: 0;
+		padding: 0;
+		background: blue;
+		color: white;
+		font-family: cursive;
+		}
+		a{
+		text-decoration: none;
+		margin-left: 10px;
+		}
+		#menu{
+			background: linear-gradient(to right, white,white,blue);
+			padding: 15px;
+			
+		}
+		input:focus{
+		border: 4px solid lime;
+		
+		}
+		#main{
+		
+		
+		}
+		
+		input:valid{
+		background: #23cc23;
+		}
+		input:invalid{
+		background: #ff000d;
+		}
+		a:hover{
+			color:red;
+			text-decoration: underline;
+		}
+		form{
+		padding: 0 10px;
+		}
+		input[type=submit]{
+		padding: 10px 20px;
+		background: linear-gradient(to right, purple,red);
+		color: white;
+		border: 0;
+		}
+		input[type=submit]:hover{
+		background: linear-gradient(to right, red,purple);
+		}
+	</style>
+	</head>
+	<body>
+	<div id="menu">
+	<a href="z1.html">Анкета</a>
+	<a href="z2.html">Результат</a>
+	</div>
+	<div id="main">
+	<h1 align="center">Анкета учасника</h1>
+	
+	<form action="z2.html">
+		<label>Введіть ваше ім'я</label><br>
+		<input type="text" required="required"/><br><br>
+		<label>Введіть ваш клас</label><br>
+		<input type="number" required="required" min="1" max="11"/><br><br>
+		<label>Введіть ваш e-mail</label><br>
+		<input type="email" required="required"/><br><br>
+		<label>Які мови ви знаєте?</label><br>
+		<input type="checkbox"/>Українська<br>
+		<input type="checkbox"/>Російська<br>
+		<input type="checkbox"/>Англійська<br>
+		
+		<br>
+		<input type="submit" value="Відправити"/><br>
+		
+	</form>
+	</div>
+	
+	</body>
+</html>
