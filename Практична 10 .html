@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Космічний світ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      height: 200vh;
+    }
+
+    .sidebar {
+      width: 400px;
+      background-color: #111;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .sidebar img:hover {
+      transform: scale(1.05);
+    }
+
+    .content {
+      flex-grow: 5;
+      padding: 20px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg" alt="Марс" onclick="showContent('mars')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg" alt="Місяць" onclick="showContent('moon')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg" alt="Юпітер" onclick="showContent('jupiter')">
+    </div>
+    <div class="content" id="contentArea">
+      <h2>Вітаємо у космічному світі!</h2>
+      <p>Натисніть на планету, щоб дізнатися більше.</p>
+    </div>
+  </div>
+
+<script>
+  function showContent(planet) {
+    const content = {
+      mars: `
+        <h2 style="font-size: 100px;">Марс</h2>
+        <p style="font-size: 50px;">Марс — четверта планета від Сонця. Його ще називають "червоною планетою" через колір поверхні. Існує ймовірність, що колись на Марсі було життя.</p>
+      `,
+      moon: `
+        <h2 style="font-size: 100px;">Місяць</h2>
+        <p style="font-size: 50px;">Місяць — єдиний природний супутник Землі. Він має вирішальне значення для припливів і відпливів на нашій планеті та був першим об'єктом космічного польоту людини.</p>
+      `,
+      jupiter: `
+        <h2 style="font-size: 100px;">Юпітер</h2>
+        <p style="font-size: 50px;">Юпітер — найбільша планета Сонячної системи. Він має потужне магнітне поле та понад 70 супутників, включаючи Європу та Ганімед.</p>
+      `
+    };
+
+    document.getElementById("contentArea").innerHTML = content[planet];
+  }
+</script>
+</body>
+</html>
